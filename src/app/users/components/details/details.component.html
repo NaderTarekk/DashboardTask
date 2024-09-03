@@ -1,0 +1,12 @@
+<div class="p-5 m-5">
+    <h4>Id : <span class="text-primary">{{user.id}}</span></h4>
+    <h4>Name : <span class="text-primary">{{user.name}}</span></h4>
+    <h4>Email : <span class="text-primary">{{user.email}}</span></h4>
+    <div class="d-flex align-items-center">
+        <h4>Activation Status : </h4>
+        <span class="ActiveStatus mx-2" *ngIf="user.isActive"></span>
+        <span class="NotActiveStatus mx-2" *ngIf="!user.isActive"></span>
+    </div>
+    <a class="btn btn-warning">Update</a>
+    <div class="h" *ngIf="user.isActive"></div>
+</div>

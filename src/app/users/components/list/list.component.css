@@ -1,0 +1,23 @@
+.ActiveStatus{
+    width: 3px;
+    display: block;
+    margin: auto;
+    background-color: #2eff3c;
+    margin-top: 14px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px #2bff00;
+}
+.NotActiveStatus{
+    width: 3px;
+    display: block;
+    margin: auto;
+    background-color: #f85d25;
+    margin-top: 14px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px #ff4400;
+}
+
+.alert-message{
+    width: max-content;
+    margin: 0 auto;    
+}

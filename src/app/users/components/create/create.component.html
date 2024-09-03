@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>Login</h4>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="Form" (ngSubmit)="OnCreate()">
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <h6 for="username">Username</h6>
+                                <span class="required">*Required</span>
+                            </div>
+                            <input type="text" class="form-control" id="username" placeholder="Enter name"
+                                formControlName="name">
+
+                            <span *ngIf="Name?.dirty && Name?.touched && Name?.invalid 
+                                && Name?.getError('required')" class="text-danger">
+                                Name is required
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <h6 for="Email">Email</h6>
+                                <span class="required">*Required</span>
+                            </div>
+                            <input type="email" class="form-control" id="Email" placeholder="Enter Email"
+                                formControlName="email">
+                            <span *ngIf="Email?.dirty && Email?.touched && Email?.invalid" class="text-danger">
+                                <span *ngIf="Email?.getError('required')">Email is required</span>
+                                <span *ngIf="Email?.getError('email')">Invalid email</span>
+                            </span>
+                        </div>
+                        <div class="alert alert-{{userCreatedStatus}} mt-3 text-center" *ngIf="userCreated">
+                            {{userCreatedWord}}
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary mt-3"
+                                [disabled]="Form.invalid">{{btnWord}}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
